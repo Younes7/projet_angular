@@ -1,0 +1,14 @@
+<div class="content">
+  <button ng-click="order='nom'">Trier par Nom</button>
+  <button ng-click="order='-buts'">Trier par Buts</button>
+    <input type="text" ng-model="search" placeholder="rechercher buteur"/>
+  <ul id="buteur-liste">
+    <li ng-repeat="buteur in buteurs | orderBy: order | filter: search">
+      <img ng-src="{{buteur.photo}}" style="margin:-12px 10px 0 0; float: left; width:50px; height: 50px;" ng-show="buteur.photo"/>
+      <img ng-src="{{buteur.thumb}}" style="margin:-12px 10px 0 0; float: left; width:50px;" ng-show="buteur.thumb"/>
+      <h3>{{buteur.nom}} - {{buteur.equipe}}</h3>
+      <span class="buts">{{buteur.buts}} buts</span>
+    </li>
+  </ul>
+  <a href="" ng-click="effacer()">effacer la liste</a>
+</div>
